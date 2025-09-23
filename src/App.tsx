@@ -1,10 +1,10 @@
+import NavBar from "./components/navbar/index";
+
 function App() {
   return (
-    <>
-      <h1>hello world</h1>
-      <h1 className="font-montserrat">hello world</h1>
-      <h1 className="font-dmsans">hello world</h1>
-    </>
+    <div className="app text-gray-500 bg-gray-50">
+      <NavBar />
+    </div>
   );
 }
 
