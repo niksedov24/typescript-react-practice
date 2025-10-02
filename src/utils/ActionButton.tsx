@@ -7,20 +7,23 @@ type Props = {
   children: React.ReactNode;
   to?: TSectionID;
   variant: "link" | "button";
+  className?: string;
 };
 
-const ActionButton = ({ children, to, variant }: Props) => {
+const ActionButton = ({ children, to, variant, className }: Props) => {
+  const baseStyle = "animate rounded-md px-10 py-2 cursor-pointer ";
+  const linkStyle =
+    className ||
+    `${baseStyle} bg-secondary-500 hover:bg-primary-500 hover:text-white`;
+  const buttonStyle =
+    className ||
+    `${baseStyle}bg-primary-500  hover:bg-secondary-500 hover:text-white`;
   return variant === "link" && to ? (
-    <Link
-      to={to}
-      className="rounded-md bg-secondary-500 px-10 py-2 cursor-pointer hover:bg-primary-500 hover:text-white animate"
-    >
+    <Link to={to} className={linkStyle}>
       {children}
     </Link>
   ) : (
-    <button className="rounded-md bg-primary-500 px-10 py-2 cursor-pointer hover:bg-secondary-500 hover:text-white animate">
-      {children}
-    </button>
+    <button className={buttonStyle}>{children}</button>
   );
 };
 
