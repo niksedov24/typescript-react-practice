@@ -87,6 +87,31 @@ const NavBar = () => {
                 >
                   <Bars3Icon className="h-6 w-6 text-white animate" />
                 </button>
+                {!isAboveMediaScreen && isMenuToggled && (
+                  <div className="fixed  top-0 right-0  h-screen z-40 w-[300px] bg-primary-100 drop-shadow-xl animate">
+                    <div className="flex justify-end py-6 px-6">
+                      <button onClick={() => setIsMenuToggled(false)}>
+                        <XMarkIcon className="h-7 w-7 text-gray-600  animate" />
+                      </button>
+                    </div>
+                    <div className="ml-[20%] flex flex-col gap-10 text-xl">
+                      {navLinks.map(({ id, label }) => (
+                        <CustomLink
+                          section={id}
+                          activeSection={activeSection}
+                          key={id}
+                          onClick={(sectionId) => {
+                            setActiveSection(sectionId);
+                            setIsMenuToggled(false);
+                          }}
+                        >
+                          {" "}
+                          {label}{" "}
+                        </CustomLink>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </>
             )}
           </div>
