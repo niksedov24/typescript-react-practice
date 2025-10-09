@@ -5,9 +5,7 @@ import HomePageGraphic from "@/assets/HomePageGraphic.png";
 import { motion } from "framer-motion";
 import { sponsorImages } from "@/utils/sponsorImages";
 
-type Props = {};
-
-const Home = (props: Props) => {
+const Home = () => {
   return (
     <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
       <div className="mx-auto w-5/6 items-center justify-center md:flex md:w-5/6">
