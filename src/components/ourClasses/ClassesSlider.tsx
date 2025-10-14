@@ -3,6 +3,13 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { motion } from "framer-motion";
+import {
+  baseMotion,
+  slideLeft,
+  withDelay,
+  sliderDelay,
+} from "@/utils/motionPresets";
 
 import { classesData } from "@/utils/classesData";
 import type { ClassesType } from "@/types/type";
@@ -28,11 +35,18 @@ const ClassesSlider = () => {
           className="flex items-center justify-center"
           key={`${item.title} - ${index} `}
         >
-          <ClassCard
-            title={item.title}
-            description={item.description}
-            image={item.image}
-          />
+          <motion.div
+            {...baseMotion}
+            transition={sliderDelay(index)}
+            variants={slideLeft}
+          >
+            {" "}
+            <ClassCard
+              title={item.title}
+              description={item.description}
+              image={item.image}
+            />
+          </motion.div>
         </SwiperSlide>
       ))}
     </Swiper>
