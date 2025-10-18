@@ -2,6 +2,7 @@ import Home from "./components/home";
 import NavBar from "./components/navbar/index";
 import Benefits from "./components/benefits/index";
 import OurClasses from "./components/ourClasses/index";
+import ContactUs from "./components/contact";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Home />
       <Benefits />
       <OurClasses />
+      <ContactUs />
     </div>
   );
 }
