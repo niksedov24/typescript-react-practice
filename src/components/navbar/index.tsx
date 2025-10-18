@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "../../assets/Logo.png";
 import ActionButton from "@/utils/ActionButton";
 import CustomLink from "./Link";

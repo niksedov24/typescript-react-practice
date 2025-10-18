@@ -1,10 +1,9 @@
-import React from "react";
 import { motion } from "framer-motion";
 import BenefitsPageGraphic from "../../assets/BenefitsPageGraphic.png";
 import ActionButton from "@/utils/ActionButton";
 import Heading from "@/utils/Heading";
 import { benefits } from "@/utils/benefitData";
-import Benefit from "../benefits/Benefit";
+import Benefit from "./Benefit";
 import { baseMotion, slideLeft, slideRight } from "@/utils/motionPresets";
 
 const Benefits = () => {

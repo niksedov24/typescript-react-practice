@@ -1,4 +1,3 @@
-import React from "react";
 import ActionButton from "@/utils/ActionButton";
 import HomePageText from "@/assets/HomePageText.png";
 import HomePageGraphic from "@/assets/HomePageGraphic.png";

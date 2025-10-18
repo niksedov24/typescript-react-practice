@@ -4,12 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { motion } from "framer-motion";
-import {
-  baseMotion,
-  slideLeft,
-  withDelay,
-  sliderDelay,
-} from "@/utils/motionPresets";
+import { baseMotion, slideLeft, sliderDelay } from "@/utils/motionPresets";
 
 import { classesData } from "@/utils/classesData";
 import type { ClassesType } from "@/types/type";

@@ -1,4 +1,3 @@
-import React from "react";
 import type { TSectionID } from "../../types/type";
 import { Link } from "react-scroll";
 

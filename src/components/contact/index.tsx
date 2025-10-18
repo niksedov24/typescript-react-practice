@@ -3,10 +3,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import type { ContactFormType } from "@/utils/contactSchema";
 import { contactSchema } from "@/utils/contactSchema";
 import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
-import TextInput from "../formElements/Textinput";
 import Heading from "@/utils/Heading";
 import { motion } from "framer-motion";
 import { baseMotion, slideLeft, slideRight } from "@/utils/motionPresets";
+import TextInput from "../formElements/TextInput";
+
 const ContactUs = () => {
   const {
     register,
@@ -55,7 +56,7 @@ const ContactUs = () => {
           TO GET IN SHAPE
         </Heading>
         <p className="my-5">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elitt. Unde,
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde,
           assumenda consectetur deleniti quaerat cumque quidem iusto possimus
           maxime ipsum iure mollitia laboriosam sunt qui voluptas sed delectus
           nulla omnis eius.

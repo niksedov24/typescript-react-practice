@@ -1,4 +1,3 @@
-import React from "react";
 import type { benefitType } from "@/types/type";
 import { motion } from "framer-motion";
 import ActionButton from "@/utils/ActionButton";
