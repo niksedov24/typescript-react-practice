@@ -55,7 +55,7 @@ const ContactUs = () => {
           TO GET IN SHAPE
         </Heading>
         <p className="my-5">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde,
+          Lorem ipsum dolor, sit amet consectetur adipisicing elitt. Unde,
           assumenda consectetur deleniti quaerat cumque quidem iusto possimus
           maxime ipsum iure mollitia laboriosam sunt qui voluptas sed delectus
           nulla omnis eius.
