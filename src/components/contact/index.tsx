@@ -19,29 +19,27 @@ const ContactUs = () => {
   });
 
   const onSubmit = async (data: ContactFormType) => {
-    try {
-      const response = await fetch(
-        "https://formsubmit.co/ajax/valera.sedov99@mail.ru",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-
-      const result = await response.json();
-
-      if (result.success === "true") {
-        reset();
-      } else {
-        console.error("FormSubmit response:", result);
-      }
-    } catch (error) {
-      console.log("Error submitted form", error);
-    }
+    // try {
+    //   const response = await fetch(
+    //     "https://formsubmit.co/ajax/valera.sedov99@mail.ru",
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //         Accept: "application/json",
+    //       },
+    //       body: JSON.stringify(data),
+    //     }
+    //   );
+    //   const result = await response.json();
+    //   if (result.success === "true") {
+    //     reset();
+    //   } else {
+    //     console.error("FormSubmit response:", result);
+    //   }
+    // } catch (error) {
+    //   console.log("Error submitted form", error);
+    // }
   };
   return (
     <section id="contactus" className="mx-auto w-5/6 pb-32 pt-24">
