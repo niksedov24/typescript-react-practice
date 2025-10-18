@@ -3,6 +3,8 @@ import NavBar from "./components/navbar/index";
 import Benefits from "./components/benefits/index";
 import OurClasses from "./components/ourClasses/index";
 import ContactUs from "./components/contact";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Benefits />
       <OurClasses />
       <ContactUs />
+      <Footer />
+      <ScrollToTop />
     </div>
   );
 }

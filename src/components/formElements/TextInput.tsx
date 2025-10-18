@@ -20,8 +20,8 @@ const TextInput = ({
     <div className="relative mb-1">
       {type === "textarea" ? (
         <textarea
-          placeholder="placeholder"
-          className="inputClass"
+          placeholder={placeholder}
+          className={inputClass}
           rows={4}
           {...register}
         ></textarea>
@@ -29,7 +29,7 @@ const TextInput = ({
         <input
           type={type}
           placeholder={placeholder}
-          className="inputClass"
+          className={inputClass}
           {...register}
         />
       )}

@@ -5,8 +5,8 @@ import { contactSchema } from "@/utils/contactSchema";
 import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
 import TextInput from "../formElements/Textinput";
 import Heading from "@/utils/Heading";
-import { error } from "console";
-
+import { motion } from "framer-motion";
+import { baseMotion, slideLeft, slideRight } from "@/utils/motionPresets";
 const ContactUs = () => {
   const {
     register,
@@ -18,16 +18,39 @@ const ContactUs = () => {
     mode: "onTouched",
   });
 
-  const onSubmit = (data: ContactFormType) => {
-    console.log("Form submitted with data ", data);
-    setTimeout(() => {
-      alert("Thank you for your message");
-      reset();
-    }, 1000);
+  const onSubmit = async (data: ContactFormType) => {
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/valera.sedov99@mail.ru",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success === "true") {
+        reset();
+      } else {
+        console.error("FormSubmit response:", result);
+      }
+    } catch (error) {
+      console.log("Error submitted form", error);
+    }
   };
   return (
     <section id="contactus" className="mx-auto w-5/6 pb-32 pt-24">
-      <div className="md:w-3/5">
+      <motion.div
+        {...baseMotion}
+        transition={{ duration: 0.5 }}
+        variants={slideLeft}
+        className="md:w-3/5"
+      >
         <Heading>
           {" "}
           <span className="text-primary-500">JOIN NOW</span>
@@ -39,9 +62,14 @@ const ContactUs = () => {
           maxime ipsum iure mollitia laboriosam sunt qui voluptas sed delectus
           nulla omnis eius.
         </p>
-      </div>
+      </motion.div>
       <div className="mt-10 justify-between gap-8 md:flex">
-        <div className="mt-10 basis-3/5 md:mt-0">
+        <motion.div
+          {...baseMotion}
+          transition={{ duration: 0.5 }}
+          variants={slideLeft}
+          className="mt-10 basis-3/5 md:mt-0"
+        >
           <form className="relative z-[2]" onSubmit={handleSubmit(onSubmit)}>
             <TextInput
               placeholder="Your Name"
@@ -67,7 +95,30 @@ const ContactUs = () => {
             >
               Submit
             </button>
+            {isSubmitSuccessful && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="mt-4 text-green-600 text-center font-semibold"
+              >
+                Your message has been sent successful{" "}
+              </motion.p>
+            )}
           </form>
+        </motion.div>
+        <div className="mt-10 basis-2/5 md:mt-0">
+          <motion.div
+            {...baseMotion}
+            transition={{ duration: 0.5 }}
+            variants={slideRight}
+            className="w-full  relative before:absolute before:-bottom-20  before:-right-10 before:z-[1] md:before:content-(--content-evolvetext) "
+          >
+            <img
+              className="w-full relative z-[2] "
+              src={ContactUsPageGraphic}
+              alt="ContactUs"
+            />
+          </motion.div>
         </div>
       </div>
     </section>
