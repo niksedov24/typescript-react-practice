@@ -8,4 +8,5 @@ export default defineConfig({
   resolve: {
     alias: [{ find: "@", replacement: path.resolve(process.cwd(), "src") }],
   },
+  base: process.env.VITE_BASE_PATH || "/typescript-react-practice",
 });
