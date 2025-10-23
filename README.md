@@ -1,1 +1,1 @@
-evo-gym-react-ts.netlify.app
+https://typescript-react-practice-rust.vercel.app/
